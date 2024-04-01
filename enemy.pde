@@ -25,6 +25,7 @@ class Enemy {
   void drawEnemy() {
     fill(0);
     circle(EPos.x, EPos.y, 100);
+
   }
   
   void updatePos() {
