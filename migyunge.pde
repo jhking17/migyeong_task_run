@@ -2,7 +2,7 @@
 // 따라오는 과제피하기
 timer startTimer = new timer(0);
 boolean isShowRed = false;
-PImage img, img2, img3;
+PImage img, img2, img3, img4;
 PImage back, soong, stone, horse, soongstone;
 int stonex;
 float time1;
@@ -32,6 +32,8 @@ void setup()
   img2.resize(110, 150);
   img3 = loadImage("tree1.png"); 
   img3.resize(110, 150); 
+  img4 = loadImage("enemy.png");
+  img4.resize(100, 100); 
 }
 
 void draw()

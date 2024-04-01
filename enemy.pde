@@ -23,9 +23,7 @@ class Enemy {
   }
   
   void drawEnemy() {
-    fill(0);
-    circle(EPos.x, EPos.y, 100);
-
+    image(img4, EPos.x - 50, EPos.y - 50);
   }
   
   void updatePos() {
