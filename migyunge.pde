@@ -5,12 +5,13 @@ boolean isShowRed = false;
 PImage img, img2, img3, img4, img5, img6, img7, img8;
 PImage back, soong, stone;
 float time1;
-Player player = new Player(new PVector(width/2, height/2));
+Player player = new Player(new PVector(0, 0));
 Enemy enemy = new Enemy(width, height, 0.1);
-Collision col = new Collision(player, enemy, 100);
+Collision col = new Collision(player, enemy, player.GetSize());
+boolean isFin = false;
 
 void setup()
-{ 
+{
   size(900, 600);
   back = loadImage("cloud.jpg");
   back.resize(900, 400);
@@ -39,29 +40,35 @@ void setup()
 void draw()
 {
   _backGround();
-  
+
   time();
   if (isShowRed) {
     bg_Change();
   }
-  
-  if(col.isTrigger()){
+
+  if (col.isTrigger()) {
     fin();
   }
-  //player
-  if(isRangeToMove(new PVector(mouseX, mouseY))) // check bound
-    player.TrackingMouse();
-    
+
   noCursor();
   player.DrawPlayer();
-  enemy.update();
-  
-  if(startTimer.gettime() % 10 == 0){
+  enemy.drawEnemy();
+  if (!isFin) {
+    startTimer.countUp();
+    enemy.updatePos();
+
+    //player
+    if (isRangeToMove(new PVector(mouseX, mouseY))) // check bound
+      player.TrackingMouse();
+  }
+
+  if (startTimer.gettime() % 10 == 0) {
     enemy.setVelocity(enemy.velocity + 0.2);
   }
 }
 
-void fin(){
+void fin() {
+  isFin = true;
   textSize(128);
-  text("Game Over", 40, 120);  
+  text("Game Over", 40, 120);
 }

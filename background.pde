@@ -30,7 +30,6 @@ void _backGround() {
 }
 
 void time() {
-  startTimer.countUp();
   time1 = startTimer.gettime();
   String time2 = (int)time1 / 60 + " M " + (int)time1 % 60 + " S";
   fill(0);
