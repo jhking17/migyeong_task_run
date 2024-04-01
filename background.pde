@@ -28,6 +28,5 @@ void time() {
 }
 
 void bg_Change() {
-  print("test");
   
 }

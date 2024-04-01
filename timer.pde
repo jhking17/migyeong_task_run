@@ -7,7 +7,7 @@ class timer
   }
   float gettime() // returns the current time
   {
-    return(time);
+    return time;
   }
   void settime(float set)// set the timer to whatever you put as you temp variable ie. 10, 60 seconds
   {

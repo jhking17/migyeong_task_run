@@ -12,7 +12,7 @@ class Collision {
     PVector e = enemy.GetPosition();
     float d = p.dist(e);
 
-    if (d < 1) {
+    if (d < 10) {
       return true;
     } else {
       return false;
