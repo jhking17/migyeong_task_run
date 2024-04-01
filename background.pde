@@ -1,3 +1,13 @@
+int backgroundMinimumY = 80;
+
+boolean isRangeToMove(PVector pos)
+{
+  return pos.y >= backgroundMinimumY
+  && pos.y <= height
+  && pos.x >= 0
+  && pos.x <= width;
+}
+
 void _backGround() {
   image(back, 0, 0);
   image(soong, 600, 0);
