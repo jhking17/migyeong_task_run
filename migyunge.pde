@@ -48,8 +48,10 @@ void draw()
   if(col.isTrigger()){
     fin();
   }
-  //playeer
-  player.TrackingMouse();
+  //player
+  if(isRangeToMove(new PVector(mouseX, mouseY))) // check bound
+    player.TrackingMouse();
+    
   noCursor();
   player.DrawPlayer();
   enemy.update();

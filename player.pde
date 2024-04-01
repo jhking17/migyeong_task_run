@@ -43,6 +43,11 @@ class Player
     Position = position;
   }
   
+  int GetSize()
+  {
+    return imageSize;
+  }
+  
   PVector GetPosition()
   {
     return Position;
