@@ -6,6 +6,7 @@ PImage back, soong, stone;
 float time1;
 Player player = new Player(new PVector(0, 0));
 Enemy enemy = new Enemy(width, height, 0.1);
+Collision col = new Collision(player, enemy);
 
 void setup()
 {
@@ -36,12 +37,25 @@ void setup()
 
 void draw()
 {
-  //playeer
-  player.TrackingMouse();
   _backGround();
-
+  
   time();
   if (10<time1) {
     bg_Change();
   }
+  
+  if(col.isTrigger()){
+    fin();
+  }
+  //playeer
+  player.TrackingMouse();
+  player.DrawPlayer();
+  enemy.update();
+  
+  
+}
+
+void fin(){
+  textSize(128);
+  text("Game Over", 40, 120);  
 }
