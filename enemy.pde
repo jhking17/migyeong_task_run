@@ -1,7 +1,7 @@
 class Enemy {
   public PVector EPos;
   public float MAX_VELOCITY = 0.9;
-  float velocity;
+  public float velocity;
   
   Enemy () {
     EPos = new PVector(100,100);
@@ -18,12 +18,13 @@ class Enemy {
   }
   
   void setVelocity(float v) {
+    
     this.velocity = v;
   }
   
   void drawEnemy() {
     fill(0);
-    circle(EPos.x, EPos.y, 10);
+    circle(EPos.x, EPos.y, 100);
   }
   
   void updatePos() {
