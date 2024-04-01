@@ -15,6 +15,8 @@ void _backGround() {
   image(img3, 0, 450);
   image(img5, 140, 470);
   image(img4, 70, 470);
+  
+  isShowRed = 0 <= int(time1%10) &&  int(time1%10) < 1 && time1 > 1;
 }
 
 void time() {
@@ -28,5 +30,6 @@ void time() {
 }
 
 void bg_Change() {
-  
+  fill(255, 0, 0, 80);
+  rect(0, 0, 900, 600);  
 }

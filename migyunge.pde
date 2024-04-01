@@ -1,12 +1,13 @@
 // 미경이가 마우스가 되서
 // 따라오는 과제피하기
-public timer startTimer = new timer(0);
+timer startTimer = new timer(0);
+boolean isShowRed = false;
 PImage img, img2, img3, img4, img5, img6, img7, img8;
 PImage back, soong, stone;
 float time1;
 Player player = new Player(new PVector(width/2, height/2));
 Enemy enemy = new Enemy(width, height, 0.1);
-Collision col = new Collision(player, enemy);
+Collision col = new Collision(player, enemy, 100);
 
 void setup()
 { 
@@ -40,7 +41,7 @@ void draw()
   _backGround();
   
   time();
-  if (10<time1) {
+  if (isShowRed) {
     bg_Change();
   }
   
@@ -53,7 +54,9 @@ void draw()
   player.DrawPlayer();
   enemy.update();
   
-  
+  if(startTimer.gettime() % 10 == 0){
+    enemy.setVelocity(enemy.velocity + 0.2);
+  }
 }
 
 void fin(){
