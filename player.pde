@@ -16,7 +16,8 @@ class Player
 
   void DrawPlayer()
   {
-    //fill this
+    fill(0);
+    circle(Position.x, Position.y, 5);
   }
 
   void TrackingMouse()
