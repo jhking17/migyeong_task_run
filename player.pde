@@ -30,5 +30,10 @@ class Player
   void SetPosition(PVector position)
   {
     Position = position;
-  }  
+  }
+  
+  PVector GetPosition()
+  {
+    return Position;
+  }
 }
