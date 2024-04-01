@@ -4,11 +4,11 @@ public timer startTimer = new timer(0);
 PImage img, img2, img3, img4, img5, img6, img7, img8;
 PImage back, soong, stone;
 float time1;
-Player player = new Player(new PVector(0, 0));
+Player player = new Player(new PVector(width/2, height/2));
 Enemy enemy = new Enemy(width, height, 0.1);
 
 void setup()
-{
+{ 
   size(900, 600);
   back = loadImage("cloud.jpg");
   back.resize(900, 400);
@@ -44,4 +44,7 @@ void draw()
   if (10<time1) {
     bg_Change();
   }
+  
+  noCursor();
+  player.DrawPlayer();
 }
